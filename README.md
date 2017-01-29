@@ -22,17 +22,35 @@ Follow instructions from [Official Guide](https://developer.linkedin.com/docs/an
  - Generate a key hash value.
  - Configure package name and hash values on your [LinkedIn application settings](https://www.linkedin.com/developer/apps).
 
-Add to your `{YourApp}/android/settings.gradle`:
+Modify the following files under your `{YourApp}/android`. Some of them should be automatically done by `react-native install`. If not, do it yourself:
+ - Modify your `{YourApp}/android/settings.gradle`:
 ```
-include ':linkedin-sdk' // Add this
+include ':linkedin-sdk'
+include ':react-native-linkedin-sdk'
+project(':react-native-linkedin-sdk').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-linkedin-sdk/android')
 ```
 
-Add to your `{YourApp}/android/app/build.gradle`:
-
+ - Modify your `{YourApp}/android/app/build.gradle`:
 ```
 dependencies {
-    compile project(':linkedin-sdk') // Add this
+    compile project(':linkedin-sdk')
+    compile project(':react-native-linkedin-sdk')
 }
+```
+
+ - Modify your `{YourApp}/android/app/src/main/java/com/{YourApp}/MainApplication.java`:
+```
+import com.reactlibrary.linkedinsdk.RNLinkedInSessionManagerPackage; // Add this.
+
+...in your class MainApplication...
+        @Override
+        protected List<ReactPackage> getPackages() {
+            return Arrays.<ReactPackage>asList(
+                    new MainReactPackage(),
+                    new RNLinkedInSessionManagerPackage(), // Add this.
+                    ...other packages...
+            );
+        }
 ```
 
 
