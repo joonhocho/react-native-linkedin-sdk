@@ -1,1 +1,1 @@
-export default from './js/LinkedInSessionManager';
+module.exports = require('./js/LinkedInSessionManager');

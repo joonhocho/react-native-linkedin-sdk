@@ -1,6 +1,8 @@
-import {
+const ReactNative = require('react-native');
+
+const {
   NativeModules,
-} from 'react-native';
+} = ReactNative;
 
 
 const {
@@ -31,4 +33,4 @@ const LinkedInSDK = {
   },
 };
 
-export default LinkedInSDK;
+module.exports = LinkedInSDK;
