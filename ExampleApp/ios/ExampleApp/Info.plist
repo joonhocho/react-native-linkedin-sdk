@@ -50,5 +50,17 @@
 			</dict>
 		</dict>
 	</dict>
+  <key>LIAppId</key>
+  <string>5066126</string>
+
+  <key>CFBundleURLTypes</key>
+  <array>
+    <dict>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>li5066126</string>
+      </array>
+    </dict>
+  </array>
 </dict>
 </plist>

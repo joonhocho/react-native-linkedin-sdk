@@ -8,6 +8,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import <LinkedinSwift/LSHeader.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
