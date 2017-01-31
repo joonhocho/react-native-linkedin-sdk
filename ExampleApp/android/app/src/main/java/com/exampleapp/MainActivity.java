@@ -1,6 +1,7 @@
 package com.exampleapp;
 
 import com.facebook.react.ReactActivity;
+import com.reactlibrary.linkedsdk.RNLinkedInSessionManagerPackage;
 
 public class MainActivity extends ReactActivity {
 
