@@ -1,7 +1,7 @@
 
 {
   "name": "react-native-linkedin-sdk",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React Native Wrapper for Latest LinkedIn Mobile SDK for Sign-In / Auth and API Access",
   "main": "index.js",
   "scripts": {
