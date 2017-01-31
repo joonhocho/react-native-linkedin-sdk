@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import <React/RCTBridgeModule.h>
+#import <LinkedInSwift/LSHeader.h>
 
 @interface RCT_EXTERN_MODULE(RNLinkedInSessionManager, NSObject)
 

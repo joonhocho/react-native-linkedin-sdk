@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import LinkedinSwift
 
 @objc(RNLinkedInSessionManager)
 class RNLinkedInSessionManager: NSObject {
