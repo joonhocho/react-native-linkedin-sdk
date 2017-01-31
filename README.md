@@ -55,6 +55,7 @@ import com.reactlibrary.linkedinsdk.RNLinkedInSessionManagerPackage; // Add this
 
 
 ## iOS
+
 Follow instructions from [Official Guide](https://developer.linkedin.com/docs/ios-sdk) to:
  - [Create an application on LinkedIn](https://www.linkedin.com/secure/developer?newapp=), if haven't done it for Android already.
  - [Configure your app on LinkedIn](https://www.linkedin.com/developer/apps).
@@ -88,6 +89,26 @@ Add to your `{YourApp}/ios/{YourApp}/AppDelegate.h`:
 ```
 #import <LinkedinSwift/LSHeader.h>
 ```
+
+Make sure you have a Swift Bridging Header for your project. Here's [how to create one](http://www.learnswiftonline.com/getting-started/adding-swift-bridging-header/), if you don't.
+Add to your Swift Bridging Header, `{YourApp}-Bridging-Header.h`:
+```
+#import <React/RCTBridgeModule.h>
+#import <React/RCTViewManager.h>
+#import <React/RCTEventEmitter.h>
+#import <LinkedInSwift/LSHeader.h>
+```
+
+
+Link `react-native-linkedin-sdk`
+- Open up your project in xcode and right click the package.
+- Click `Add files to '{YourApp}'`.
+- Select to `{YourApp}/node_modules/react-native-linkedin-sdk/ios/RNLinkedInSessionManager`.
+- Click 'Add'.
+- Click your project in the navigator on the left and go to `Build Settings`.
+- Search for `Header Search Paths`.
+- Double click on the value column.
+- Add `$(SRCROOT)/../node_modules/react-native-linkedin-sdk/ios/RNLinkedInSessionManager`.
 
 
 
