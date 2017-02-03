@@ -4,6 +4,8 @@ React Native wrapper for the latest [LinkedIn SDK](https://developer.linkedin.co
 
 For iOS, this library bridges [tonyli508/LinkedinSwift](https://github.com/tonyli508/LinkedinSwift).
 
+For Google Sign-In SDK, check out [joonhocho/react-native-google-sign-in](https://github.com/joonhocho/react-native-google-sign-in).
+
 ## Getting started
 
 See [Tested Environments](#tested-environments).
