@@ -35,16 +35,18 @@ class RNLinkedInSessionManager: NSObject {
   
   @objc func authorize(_ resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) {
     if let linkedinHelper = linkedinHelper {
-      linkedinHelper.authorizeSuccess({ (lsToken) in
-        // Delay is necessary as ViewController is closing.
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-          resolve(RNLinkedInSessionManager.tokenToJSON(lsToken))
-        }
-      }, error: { (error) in
-        reject("authorizeSuccessError", error.localizedDescription, error)
-      }, cancel: {
-        reject("authorizeSuccessCancel", "", nil)
-      })
+      DispatchQueue.main.sync() {
+        linkedinHelper.authorizeSuccess({ (lsToken) in
+            // Delay is necessary as ViewController is closing.
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                resolve(RNLinkedInSessionManager.tokenToJSON(lsToken))
+            }
+        }, error: { (error) in
+            reject("authorizeSuccessError", error.localizedDescription, error)
+        }, cancel: {
+            reject("authorizeSuccessCancel", "", nil)
+        })
+      }
     } else {
       reject("uninitialized", "call configure first", nil)
     }
