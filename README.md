@@ -161,6 +161,8 @@ I only tested with the following environments:
  - Xcode Version 8.2.1 (8C1002)
  - Android Studio 2.2.3 / Build #AI-145.3537739, built on December 2, 2016 / JRE: 1.8.0_112-release-b05 x86_64 / JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
 
+## Alternatives
+* [react-native-linkedin](https://github.com/xcarpentier/react-native-linkedin)
 
 ## LICENSE
 ```
